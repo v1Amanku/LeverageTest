@@ -63,7 +63,7 @@ export default function Root() {
                                     </div>
                                 </td>
                                 <td width={'60%'}>{getDescription(record.show)}</td>
-                                <td width={'2%'}>{getScore(record.score)}</td>
+                                <td width={'2%'}>{getScore(record.show.rating?.average)}</td>
                                 <td width={'5%'}><Button onClick={() => handleClick(record.show.id)} variant={"primary"}>Link</Button></td>
                             </tr>)}
                         </tbody>
