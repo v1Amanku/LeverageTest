@@ -3,7 +3,7 @@ import {IRecord, IShow} from "../interfaces/main";
 import Container from 'react-bootstrap/Container';
 import {Button, Col, FormControl, Image, InputGroup, Row, Table} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
-import getScore from "../helpers/ratings";
+import {getScore} from "../helpers/ratings";
 
 export default function Root() {
     const navigate = useNavigate()

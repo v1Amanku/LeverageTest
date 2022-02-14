@@ -24,7 +24,7 @@ export default function SeasonCard(props: ISeasonCard) {
                                     </thead>
                                     <tbody>
                                     {props.season.map((episode, index) =>
-                                        <tr key={index}>
+                                        (episode.number % 3 === 0 || episode.number % 5 === 0) &&<tr key={index}>
                                             <td width={'3%'}>{episode.number}</td>
                                             <td width={'17%'}>{episode.name}</td>
                                             <td><div dangerouslySetInnerHTML={{__html: episode.summary}}/></td>

@@ -3,7 +3,7 @@ import {useParams} from "react-router-dom";
 import {IEpisodes, IShow} from "../interfaces/main";
 import Container from "react-bootstrap/Container";
 import {Card, Image} from "react-bootstrap";
-import getScore from "../helpers/ratings";
+import {getScore} from "../helpers/ratings";
 import SeasonCards from "../components/SeasonCards";
 import dayjs from "dayjs";
 
