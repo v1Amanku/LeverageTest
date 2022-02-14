@@ -59,7 +59,7 @@ export default function Root() {
                                 <td width={'20%'}>
                                     <div>
                                         <Image src={record.show.image?.medium}/>
-                                        {record.show.status === "Running" && <div className={'airing'}>Airing</div>}
+                                        {record.show.image?.medium && record.show.status === "Running" && <div className={'airing'}>Airing</div>}
                                     </div>
                                 </td>
                                 <td width={'60%'}>{getDescription(record.show)}</td>
