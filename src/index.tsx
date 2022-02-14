@@ -4,6 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const dayjs = require("dayjs");
+let duration = require('dayjs/plugin/duration');
+let relativeTime = require('dayjs/plugin/relativeTime');
+
+dayjs.extend(duration);
+dayjs.extend(relativeTime);
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import {Card, Image} from "react-bootstrap";
 import getScore from "../helpers/ratings";
 import SeasonCards from "../components/SeasonCards";
+import dayjs from "dayjs";
 
 export default function Details() {
     const { id } = useParams();
@@ -40,7 +41,7 @@ export default function Details() {
                         <Card.Body>
                             <div className={'summary'} dangerouslySetInnerHTML={{__html: show.summary}}/>
                             <div style={{textAlign:"left"}}>
-                                <div><b>Premiered: </b>{show.premiered}</div>
+                                <div><b>Premiered: </b>{dayjs().diff(dayjs(show.premiered, "YYYY-MM-DD"), 'days')} days ago</div>
                                 <div><b>Genres: </b> {show.genres.map((el, index) => index !== show.genres.length-1 ? el + ', ' : el)}</div>
                                 <div><b>Language: </b> {show.language}</div>
                                 <div><b>Status: </b>{show.status}</div>

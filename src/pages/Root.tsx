@@ -19,7 +19,7 @@ export default function Root() {
     const getDescription = useCallback((show: IShow) => {
         return (
             <div className={'description'}>
-                <div><h1>{show.name}</h1></div>
+                <h1>{show.name}</h1>
                 <div><b>Premiered: </b>{show.premiered}</div>
                 <div><b>Genres: </b> {show.genres.map((el, index) => index !== show.genres.length-1 ? el + ', ' : el)}</div>
             </div>
@@ -34,6 +34,7 @@ export default function Root() {
                 .then(response => response.json())
                 .then(data => {
                     setShows(data)
+                    console.log(data);
                 });
         }
     }, [])
@@ -55,7 +56,12 @@ export default function Root() {
                         <tbody>
                         {shows.map((record, index) =>
                             <tr key={index}>
-                                <td width={'20%'}><Image src={record.show.image?.medium}/></td>
+                                <td width={'20%'}>
+                                    <div>
+                                        <Image src={record.show.image?.medium}/>
+                                        {record.show.status === "Running" && <div className={'airing'}>Airing</div>}
+                                    </div>
+                                </td>
                                 <td width={'60%'}>{getDescription(record.show)}</td>
                                 <td width={'2%'}>{getScore(record.score)}</td>
                                 <td width={'5%'}><Button onClick={() => handleClick(record.show.id)} variant={"primary"}>Link</Button></td>
