@@ -56,10 +56,10 @@ export default function Root() {
                         <tbody>
                         {shows.map((record, index) =>
                             <tr key={index}>
-                                <td width={'20%'}>
+                                <td width={'15%'}>
                                     <div>
-                                        <Image src={record.show.image?.medium}/>
-                                        {record.show.image?.medium && record.show.status === "Running" && <div className={'airing'}>Airing</div>}
+                                        <Image style={{maxWidth: '100%'}} src={record.show.image?.medium ?? 'placeholder.png'}/>
+                                        {record.show.status === "Running" && <div className={'airing'}>Airing</div>}
                                     </div>
                                 </td>
                                 <td width={'60%'}>{getDescription(record.show)}</td>
