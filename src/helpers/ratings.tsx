@@ -1,5 +1,5 @@
 
-export function getScore(score: number, multiplier: number = 100) {
+export function getScore(score: number, multiplier: number = 10) {
     const value = score*multiplier;
     let className;
     if(value > 75) {
